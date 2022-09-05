@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "954883934113",
+    "project_id": "sabre-security-a5c89",
+    "storage_bucket": "sabre-security-a5c89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954883934113:android:92af4a96fd40c4d473ade0",
+        "android_client_info": {
+          "package_name": "com.eoxysit.sabre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954883934113-8r6442q8qgvj444pndr80f3lr4vi4rqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-VbkD0cvpjVlirzJLVHV_uVImDjtDTjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954883934113-8r6442q8qgvj444pndr80f3lr4vi4rqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
