@@ -23,7 +23,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               child: CircularProgressIndicator(),
             )
           : Scaffold(
-              appBar: homeAppBar("Notification", () {
+              appBar: CustomIcon("Notification", () {
                 Controller.getData();
                 Get.back();
               }),

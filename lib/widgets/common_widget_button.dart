@@ -5,12 +5,16 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:sabre_security_app/resources/theme/app_theme.dart';
 
 import '../controllers/is_userAvailable_controller.dart';
+import '../controllers/notification_controller.dart';
 import '../repository/is_available_user_update_repo.dart';
+import '../router/my_router/my_router.dart';
 import '../utils/ApiConstant.dart';
 
 PreferredSize CustomIcon(title, GestureTapCallback openDrawer) {
   final IsAvailabilityController controller =
       Get.put(IsAvailabilityController());
+
+  final NotificationController Controller = Get.put(NotificationController());
 
   return PreferredSize(
       preferredSize: Size.fromHeight(70.0),
@@ -134,6 +138,48 @@ PreferredSize CustomIcon(title, GestureTapCallback openDrawer) {
           //     },
           //   ),
           // ),
+
+          ///Home notification icon
+          Obx(() {
+            return Stack(children: [
+              Visibility(
+                visible: title == 'Home',
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.notifications_outlined,
+                    size: 30,
+                  ),
+                  tooltip: title,
+                  onPressed: () {
+                    Get.toNamed(MyRouter.notificationsScreen);
+                  },
+                ),
+              ),
+              Controller.notificationModel.value.status == true
+                  ? Positioned(
+                      right: 5,
+                      top: 5,
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 20,
+                          width: 20,
+                          // backgroundColor: AppTheme.loginLabelColor,
+                          // radius: 12,
+                          child: CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 10,
+                              child: Text(
+                                Controller.notificationModel.value.count
+                                    .toString(),
+                                style: TextStyle(
+                                    fontSize: 9, fontWeight: FontWeight.w800),
+                              )),
+                        ),
+                      ))
+                  : SizedBox.shrink(),
+            ]);
+          }),
         ],
       ));
 }
